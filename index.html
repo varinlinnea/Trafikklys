@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trafikklys</title>
+
+    <style>
+        body {
+            background-color: antiquewhite;  
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lights {
+            background-color: rgb(44, 44, 44);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lights > div {
+            height: 100px;
+            width: 100px;
+            border: 5px solid black;
+            margin: 20px;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .buttons > button {
+            margin-left: 10px;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="lights">
+        <div id="red"></div>
+        <div id="yellow"></div>
+        <div id="green"></div>
+    </div>
+    <div class="buttons">
+        <button id="" onclick="activateRed()">Rødt</button>
+        <button id="rødOgGulKnapp" onclick="activateYellowAndRed()">Gult og rødt</button>
+        <button id="grønnKnapp" onclick="activateGreen()">Grønt</button>
+    </div>
+
+    <script>
+        let redLight = document.getElementById("red");
+        let yellowLight = document.getElementById("yellow");
+        let greenLight = document.getElementById("green");
+
+        function activateRed() {
+            redLight.style.backgroundColor = "red";
+            yellowLight.style.backgroundColor = "white";
+            greenLight.style.backgroundColor = "white";
+        }
+        function activateYellowAndRed() {
+            redLight.style.backgroundColor = "red";
+            yellowLight.style.backgroundColor = "yellow";
+            greenLight.style.backgroundColor = "white";
+        }
+        function activateGreen() {
+            redLight.style.backgroundColor = "white";
+            yellowLight.style.backgroundColor = "white";
+            greenLight.style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>
