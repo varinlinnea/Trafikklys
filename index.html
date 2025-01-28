@@ -4,57 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trafikklys</title>
-
-    <style>
-        body {
-            background-color: antiquewhite;  
-            margin: auto;
-            padding: 5%;
-        }
-
-        .lights {
-            background-color: rgb(44, 44, 44);
-            margin: auto;
-            width: 150px;
-            padding: 20px;
-        }
-
-        .lights > div {
-            height: 100px;
-            width: 100px;
-            border: 5px solid black;
-            margin: 20px;
-            border-radius: 50%;
-            margin: auto;
-        }
-
-        #red {
-            background-color: rgb(255, 187, 187);
-        }
-
-        #yellow {
-            background-color: rgb(254, 254, 185);
-        }
-
-        #green {
-            background-color: rgb(187, 255, 187);
-        }
-
-        .buttons {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .buttons > button {
-            margin: 10px;
-            font-size: medium;
-        }    
-        #startKnapp, #resetKnapp {
-            font-size: 30px;
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     <div class="lights"> <!-- div for lysene -->
@@ -70,47 +21,8 @@
         <button id="startKnapp" onclick="startLight()">Start lys</button>
         <br>
         <button id="resetKnapp" onclick="resetLights()">Stopp lys</button>
+
     </div>
-
-    <script>
-        let redLight = document.getElementById("red");
-        let yellowLight = document.getElementById("yellow");
-        let greenLight = document.getElementById("green");
-        let timer;
-
-        function activateRed() { // funkjson for å aktivere rødt lys
-            redLight.style.backgroundColor = "red";
-            yellowLight.style.backgroundColor = "rgb(254, 254, 185)";
-            greenLight.style.backgroundColor = "rgb(187, 255, 187)";
-        }
-        function activateYellowAndRed() { // funksjon for å aktivere gult og rødt lys
-            redLight.style.backgroundColor = "red";
-            yellowLight.style.backgroundColor = "yellow";
-            greenLight.style.backgroundColor = "rgb(187, 255, 187)";
-        }
-        function activateGreen() { // funksjon for å aktivere grønt lys
-            redLight.style.backgroundColor = "rgb(255, 187, 187)";
-            yellowLight.style.backgroundColor = "rgb(254, 254, 185)";
-            greenLight.style.backgroundColor = "green";
-        }
-
-        function activateLight() { // funksjon for å aktivere lysene i rekkefølge
-            activateRed();
-            setTimeout(activateYellowAndRed, 2000);
-            setTimeout(activateGreen, 4000);
-        }
-
-        function startLight() { // funksjon for å starte lyset
-            activateLight();
-            timer = setInterval(activateLight, 6000);
-        }
-
-        function resetLights() { // funksjon for å stoppe lysene
-            redLight.style.backgroundColor = "rgb(255, 187, 187)";
-            yellowLight.style.backgroundColor = "rgb(254, 254, 185)";
-            greenLight.style.backgroundColor = "rgb(187, 255, 187)";
-            clearInterval(timer);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
